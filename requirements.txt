@@ -1,0 +1,17 @@
+bcrypt==3.1.4
+cffi==1.11.5
+click==6.7
+Django==1.11.11
+django-debug-toolbar==1.9.1
+Flask==0.12.2
+Flask-SQLAlchemy==2.1
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+pycparser==2.18
+pytz==2017.3
+six==1.11.0
+SQLAlchemy==1.2.5
+sqlparse==0.2.4
+virtualenv==15.1.0
+Werkzeug==0.14.1

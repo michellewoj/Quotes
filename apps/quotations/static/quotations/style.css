@@ -1,0 +1,22 @@
+.error{
+  color: red;
+}
+.box{
+
+}
+.page{
+  display: inline-block;
+  width:900px;
+}
+.link{
+  align: right;
+}
+.left{
+  width: 400px;
+  border: 2px solid black;
+}
+.right{
+  width: 400px;
+  border: 2px solid black;
+  display: block;
+}

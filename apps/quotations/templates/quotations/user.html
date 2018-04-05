@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quotations/style.css' %}">
+    <title>User Quote Page</title>
+</head>
+<body>
+    <div>
+      <a class = "link" href="{% url 'logout' %}">Logout</a>
+      <a class = "link" href="{% url 'quotes' %}">Dashboard</a>
+      <h3>Posts by: {{user.name}}</h3>
+      <p>Count: {{length}}</p>
+      {% for quote in quotes %}
+          <p>{{quote.author}} : "{{quote.message}}" </p>
+      {% endfor %}
+    </div>
+</body>
+</html>

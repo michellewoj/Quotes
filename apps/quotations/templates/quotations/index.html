@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quotations/style.css' %}">
+        <title> Quotes </title>
+  </head>
+  <body>
+    <div class="page">
+      <h1> Welcome to Quotation Station! </h1>
+      {% if messages %}
+        {% for i in messages %}
+          <p class="error">{{i}}</p>
+        {% endfor %}
+      {% endif %}
+      <div class="box">
+        <h3>Register</h3>
+        <form class="registration" action="{% url 'create_user' %}" method="POST">
+          {%csrf_token %}
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{request.session.form_name}}">
+          </div>
+          <div>
+            <label for="alias">Alias:</label>
+            <input type="text" name="alias" id="alias" value="{{request.session.form_alias}}">
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" value="{{request.session.form_email}}">
+          </div>
+          <p>Password should be at least 8 characters</p>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+          </div>
+          <div>
+            <label for="pwconf">Confirm Password:</label>
+            <input type="password" name="pwconf" id="pwconf">
+          </div>
+          <input type="submit" value="REGISTER">
+        </form>
+      </div>
+      <div class="box">
+        <h3>Login</h3>
+        <form class="registration" action="{% url 'login_user' %}" method="POST">
+          {% csrf_token %}
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{request.session.email}}">
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+          </div>
+          <input type="submit" value="LOGIN">
+      </div>
+    </div>
+  </body>
+</html>
